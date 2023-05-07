@@ -1,0 +1,82 @@
+body {
+    padding: 10px 50px;
+    background: yellow;
+  }
+  
+  .center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  fieldset {
+    background-color: #f9f9f9;
+    padding: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 10px 5px rgba(248, 36, 36, 0.2);
+    max-width: 600px;
+  }
+  
+  legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    border-color: black;
+
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f1f1f1;
+  }
+  
+  select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f1f1f1;
+  }
+  
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  input[type="submit"],
+  input[type="reset"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .center {
+    text-align: center;
+  }

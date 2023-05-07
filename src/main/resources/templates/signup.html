@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<script>
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm_password").value;
+    if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+    alert("Form submitted successfully!");
+    return true;
+  }
+</script>
+<html>
+  <head>
+    
+    <title>Sign Up</title>
+    <link rel="stylesheet" th:href="@{/css/signup.css}">
+  </head>
+  <body>
+    <div class="container">
+      <form action="preg" method="POST" onsubmit="return validateForm();">
+        <h1>Sign Up</h1>
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="mobilenumber">Mobile Number</label>
+          <input type="text" id="Number" name="Number" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" required>
+        </div>
+        <div class="input-group">
+          <input type="submit" value="Sign Up">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+

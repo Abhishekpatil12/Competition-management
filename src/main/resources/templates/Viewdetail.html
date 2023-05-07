@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" th:href="@{css/project.css}">
+
+<title>Insert title here</title>
+</head>
+<body>
+
+		<style>
+            body{
+                padding: 10px 50px;
+                background-image: url('/images/fi.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+				}
+	            
+        </style>
+        
+        
+        <div class="center-form">
+        <form>
+           <fieldset>
+                <legend>
+                <!--     <h1 style="color: crimson;" class="h1">Competition registration form</h1> -->
+                </legend>
+            
+                <h1 style="color: rgb(11, 31, 251); " class="h1">Competition registration form</h1> 
+<hr><br>
+            <div>
+           <b style="font-size: larger;"> Competition Name:</b> 
+           <b th:text="${competition.compiname}"></b>
+            
+        </div>
+        <br>
+
+        <div>
+           <b style="font-size: larger;"> Who can Apply:</b>
+            <br>
+            Male <input type="checkbox">
+            Female <input type="checkbox">
+
+        </div>
+        <br>
+        <br>
+
+        <div class="container">
+           
+            <div class="f-group">
+         <b style="font-size: larger;">       <label for="">State</label></b>
+                <select name="slct1" id="slct1" onchange="populate(this.id, 'slct2')">
+                    <option value="">Choose State</option>
+                    <option value="maharashtra">MAHARASHTRA</option>
+                    <option value="uttar pradesh">UTTAR PRADESH</option>
+                    <option value="arunachal pradesh">ARUNACHAL PRADESH</option>
+                    <option value="gujrat">GUJRAT</option>
+                    <option value="rajasthan">RAJASTHAN </option>
+                    <option value="Goa">GOA</option>
+                    <option value="himachal pradesh">HIMACHAL PRADESH</option>
+                    <option value="punjab"> PUNJAB</option>
+                    <option value="jharkhand"> JHARKHAND</option>
+                    <option value="madhya pradesh">MADHYA PRADESH</option>
+                    <option value="jammu & kashmir"> JAMMU & KASHMIR</option>
+                    <option value="karnataka ">KARNATAKA</option>
+                    <option value="andhra pradesh">ANDHRA PRADESH</option>
+
+                </select>
+            </div> 
+
+            <div class="f-group">
+            <b style="font-size: larger;">    <label for="">City</label></b>
+                <select name="city" id="slct2" ></select>
+
+        </div>
+ 
+        <script>
+            function populate(s1,s2){
+                var s1= document.getElementById(s1);
+                var s2= document.getElementById(s2);
+
+                s2.innerHTML="";
+
+                if(s1.value == "maharashtra"){
+                    var optionArray= ['pune|Pune', 'mumbai|Mumbai', 'nashik|Nashik', 'nagpur|Nagpur', 'thane|Thane',
+                                      'kolhapur|Kolhapur', 'satara|Satara', 'sangli|Sangli', 'beed|Beed', 'latur|Latur',
+                                      'nandurbar|Nandurbar','yavatmal|Yavatmal','dhule|Dhule', 'jalgaon|Jalgaon', 'panvel|Panvel',
+                                      'ahmednagar|Ahmednagar'];
+                }
+
+                else if(s1.value =="uttar pradesh"){
+                    var optionArray= ['lucknow|Lucknow','prayagraj|Prayagraj','ayodhya|Ayodhya', 'kanpur|Kanpur', 'jaunpur|Jaunpur',
+                                      'mirzapur|Mirzapur', 'varanasi|Varanasi', 'agra|Agra', 'jhansi|Jhansi', 'mathura|Mathura',
+                                      'ghorakhpur|Ghorakhpur', 'meerut|Meerut', 'raibareli|Raibareli', 'aligarah|Aligarah', 'sitapur|Sitapur'];
+                
+                }
+
+                else if(s1.value=="arunachal pradesh"){
+                    var optionArray=['itanagar|Itanagar','east siang|East Siang','tezu|Tezu', 'roing|Roing', 'jairampur|Jairampur',
+                                     'khonsa|Khonsa', 'seppa|Seppa', 'ziro|Ziro', 'tawang|Tawang', 'bomdila|Bomdila', 'namsai|Namsai', 
+                                     'alo|Alo', 'deomali|Deomali', 'lazu|Lazu', 'basar|Basar', 'mechuka|Mechuka', 'taliha|Taliha']
+                }
+
+                else if (s1.value=="gujrat"){
+                    var optionArray= ['ahemdabad|Ahemdabad', 'surat|Surat', 'rajkot|Rajkot', 'vadodra|Vadodra', 'gandhinagar|Gandhinagr',
+                                      'porbandar|Porbandar', 'bhavnagar|Bhavanagar', 'jamnagar|Jamnagar', 'junagadh|Junagadh', 'anand|Anand',
+                                      'bharuch|Bharuch', 'valsad|Valsad', 'godhra|Godhra','morhi|Morhi', 'palanpur|Palanpur','bhuj|Bhuj']
+                }
+
+                else if(s1.value=="rajasthan"){
+                    var optionArray=['jaipur|Jaipur', 'udaipur|Udaipur','jodhpur|Jodhpur', 'jaisalmer|Jaisalmer', 'bikaner|Bikaner',
+                                     'ajmer|Ajmer', 'alwar|Alwar', 'kota|Kota', 'pali|Pali', 'bhilwada|Bhilwada', 'chittorgarah|Chittorgarah',
+                                     'baran|Baran', 'bundi|Bundi','tonk|Tonk', 'dholpur|Dholpur', 'sikar|Sikar', 'jalore|Jalore','hindaun|Hindaun']
+                }
+
+                else if(s1.value=="Goa"){
+                    var optionArray=['panji|Panji', 'mapusa|Mapusa', 'morgaon|Morgaon', 'sanguem|Sanguem','ponda|Ponda','pernerm|Pernem',
+                                     'valpoi|Valpoi', 'bardez|Bardez', 'vicholim|Vicholim', 'vasco di gama|Vasco Di Gama', 'arambol|Arambol',
+                                     'satari|Satari', 'chimbel|Chimbel', 'saligaon|Saligaon', 'parnem|Parnem']
+                }
+
+                else if (s1.value=="himachal pradesh"){
+                    var optionArray=['shimla|Shimla','manali|Manali','dharmshala|Dharmshala','chamba|Chamba', 'kullu|Kullu',
+                                    'solan|Solan','dalhousie|Dalhousie', 'bilaspur|Bilaspur', 'kangra|Kangra','kasouli|Kasouli',
+                                    'hamirpur|Hamirpur', 'rajgarah|Rajgarah','banjar|Banjar','mandi|Mandi','nadaun|Nadaun','nahan|Nahan']
+                }
+
+                else if(s1.value=="punjab"){
+                    var optionArray=['amritsar|Amritsar', 'ludhina|Ludhina', 'jalandhar|Jalandhar', 'chandigarah|Chandigarah',
+                                     'patiala|Patiala','bhatinnda|Bhatinda','hoshiyarpur|Hoshiyarpur','firozpur|Firozpur','khanna|Khanna',
+                                     'batla|Batla','pathankot|Pathankot', 'rupnagar|Rupnagar','gurudaspur|Gurudaspur',,'sunam|Sunam','anandpur sahib|Anandpur Sahib']
+                }
+
+                else  if(s1.value=="jharkhand"){
+                    var optionArray=['ranchi|Ranchi','dhanbad|Dhanbad','jamshedpur|Jamshedpur','bokaro steel city|Bokaro Steel City',
+                                    'deoghar|Deoghar', 'hazirbagh|Hazirbagh', 'giridh|Giridh','phusro|Phusro','chirkunda|Chirkunda',
+                                     'godda|Godda','jhumri talaiya|Jhumri Talaiya', 'lohardaga|Lohardaga','khunti|Khunti']
+                }
+
+                else if(s1.value=="madhya pradesh"){
+                    var optionArray=['bhopal|Bhopal', 'jabalpur|Jabalpur', 'indore|Indore', 'gwalior|Gwalior', 'khandwa|Khandwa','chinwada|Chindwada',
+                                     'sagar|Sagar','ujjain|Ujjain','ratlam|Ratlam','guna|Guna','rewa|Rewa','singrouli district|Singrouli District',
+                                     'neemuch|Neemuch','betul|Betul','katni|Katni','satna|Satna','seoni|Seoni','chatarpur|Chatarpur','damoh|Damoh']
+                }
+
+                else if(s1.value=="jammu & kashmir"){
+                    var optionArray=['srinagar|Srinagar','ladakh|Ladakh','kangal|Kangal','katra tehsil|Katra Tehsil','pahalgam|Pahalgam',
+                                     'tangmarg|Tangmarg','sonamarg|Sonamarg','bhaderwah|Bhaderwah','awantipora|Awantipora','shanker bagh|Shanker Bagh',
+                                     'surankote|Surankote']
+                }
+
+                else if(s1.value=="karnataka "){
+                    var optionArray=['bengluru|Bengluru','mangluru|Mangluru','shivmogga|Shivmogga','kalaburagi|Kalaburagi','ballari|Ballari',
+                                     'vijaypura|Vijaypura','tumakuru|Tumakuru','davangere|Davangere','belagavi|Belagavi','ubbali|Ubbali',
+                                     'udupi|Udupi','mandya|Mandya','chitradurga|ChitraDurga','kolar|Kolar','bidar|Bidar']
+                }
+
+                else if(s1.value=="andhra pradesh"){
+                    var optionArray=['vizag|Vizag','vijaywada|VijayWada','tirupati|Tirupati','anantapur|Anantapur','kurnol|Kurnol',
+                                     'nellor|Nellor','guntur|Guntur','srikulam|Srikulam','bhimvaram|Bhimavaram','eluru|Eluru','ongole|Ongole',
+                                     'dharmavaram|Dharmavaram','guntakel|Guntakel','tenali|Tenali','nandyala|Nandyala','kadiri|Kadiri']
+                }
+
+                for (var option in optionArray){
+                    var pair=optionArray[option].split("|");
+                    var newoption= document.createElement("option");
+
+                    newoption.value = pair[0];
+                    newoption.innerHTML= pair[1];
+                    s2.options.add(newoption);
+                }
+            }
+        </script>
+
+        <!--<div>
+           <b style="font-style: inherit; font-size: larger;"> State:</b>
+            <select name="drop-down" id="">
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Gujrat">Gujrat</option>
+                <option value="Assam">Assam</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Jammu Kashmir">Jammu Kashmir</option>
+                <option value="Tamilnadu">Tamilnadu</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+           <b style="font-size: larger;"> City: </b>
+            <select name="drop-down" id="">
+                <option value="Pune">Pune</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Indore">Indore</option>
+                <option value="Lucknow">Lucknow</option>
+                <option value="Ahemdabad">Ahemdabad</option>
+                <option value="Satara">Satara</option>
+                <option value="Kolkata">Kolkata</option>
+
+            </select>
+        </div>-->
+        <br>
+
+        <div>
+          <b style="font-size: larger;">  Location:</b> 
+            <b th:text="${competition.location}"></b>
+            
+        </div>
+        <br>
+
+        <div>
+           <b style="font-size: larger;"> Prize Money:</b> 
+           <b th:text="${competition.prizemoney}"></b>
+        </div>
+        <br>
+
+        <div >
+          <b style="font-size: larger;">  Competition Type: </b> 
+            <br>
+            On Field Event<input type="radio"> 
+            Online Event <input type="radio">
+        </div>
+        <br>
+
+        <div>
+           <b style="font-size: larger;"> Start Date: </b>
+           <b th:text="${competition.startdate}"></b>
+        </div>
+        <br>
+
+        <div>
+           <b style="font-size: larger;"> End Date:</b> 
+           <b th:text="${competition.enddate}"></b>
+        </div>
+        <br>
+
+        <div>
+           <b style=" font-size: larger;"> Image </b>
+           <img alt="" th:src="*{'data:image/jpeg;base64,'+{competition.data}}" style="width: 300px;height:300px;">
+        </div>
+       <br>
+
+       <div>
+        <input type="Apply">
+        
+       </div>
+       <br>
+
+    </fieldset>
+        </form>
+        </div>
+        
+        
+
+</body>
+</html>
